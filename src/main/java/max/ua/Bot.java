@@ -12,8 +12,8 @@ import static max.ua.Parser.getPage;
 
 
 public class Bot extends TelegramLongPollingBot {
-    private  static  final String  TOKEN = "1465496493:AAEYLRNLiNicbyy_QL9TOxe6aACO8xhMkPw";
-    private  static  final String USERNAME = "LabaLP_bot";
+    private  static  final String  TOKEN = "1479650541:AAFYyQKWCq8mm0-epUpvU4UkfifFEw4YeiY";
+    private  static  final String USERNAME = "CryptoCurrency_Bot";
 
     public  Bot(DefaultBotOptions options) {
         super(options);
@@ -30,8 +30,8 @@ public class Bot extends TelegramLongPollingBot {
             String inputText = update.getMessage().getText();
 
             if (inputText.equals("/start")) {
-                inputText= "Привіт, мене звати бот LabaLPNU_Bot,\n" +
-                           "до ваших послуг.Якщо потрібна допомга введіть команду \"/help\"";
+                inputText= "Привіт, мене звати бот @Rate_CryptoCurrency_bot,\n" +
+                           "до ваших послуг.Якщо потрібна допомога введіть команду \"/help\"";
                 try {
                     execute(new SendMessage(char_id,inputText));
                 }catch (TelegramApiException e) {
@@ -39,23 +39,15 @@ public class Bot extends TelegramLongPollingBot {
                 }
             }
             else if (inputText.equals("/help")) {
-                inputText= "/cript - вивід криптовалютуи \n ";
+                inputText= "/crypto - курс криптовалют \n ";
                 try {
                     execute(new SendMessage(char_id,inputText));
                 }catch (TelegramApiException e) {
                     e.printStackTrace();
                 }
             }
-            if(inputText.equals("/cript")){
-            try {
 
-                execute(new SendMessage(char_id,"https://coinmarketcap.com/" ));
-                execute(new SendMessage(char_id,"https://goverla.ua/" ));
-            }catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-            }
-            if(inputText.equals("/c")){
+            if(inputText.equals("/crypto")){
 //
                 try {
                     String page = getPage();
