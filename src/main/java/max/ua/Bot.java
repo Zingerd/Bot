@@ -1,21 +1,15 @@
 package max.ua;
 
-
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
-//import org.telegram.telegrambots.api.objects.Document;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
-import org.jsoup.nodes.Document;
-
 import java.io.IOException;
-import java.net.URL;
+
 
 import static max.ua.Parser.getPage;
+
 
 public class Bot extends TelegramLongPollingBot {
     private  static  final String  TOKEN = "1465496493:AAEYLRNLiNicbyy_QL9TOxe6aACO8xhMkPw";
@@ -62,13 +56,15 @@ public class Bot extends TelegramLongPollingBot {
             }
             }
             if(inputText.equals("/c")){
+//
                 try {
-                    Element page = getPage();
+                    String page = getPage();
                     execute(new SendMessage(char_id, String.valueOf(page)));
-
-                }catch (TelegramApiException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
