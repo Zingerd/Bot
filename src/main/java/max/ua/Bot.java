@@ -14,7 +14,6 @@ import static max.ua.Parser.getPage;
 public class Bot extends TelegramLongPollingBot {
     private  static  final String  TOKEN = "1479650541:AAFYyQKWCq8mm0-epUpvU4UkfifFEw4YeiY";
     private  static  final String USERNAME = "CryptoCurrency_Bot";
-
     public  Bot(DefaultBotOptions options) {
         super(options);
     }
